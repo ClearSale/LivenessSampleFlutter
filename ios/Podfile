@@ -31,8 +31,8 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
   
-  pod 'CSLivenessSDKTec', :git => 'https://CS-Packages:s2w7zx2a7qy5kr2p4jtidx6p4ykgztiszaxlsghvfwgodeq5nvtq@dev.azure.com/CS-Package/ID-Lab-PackagesSDK/_git/CSLivenessSDK', :tag => '1.0.0-hml'
-  pod 'CSLivenessSDK', :git => 'https://CS-Packages:s2w7zx2a7qy5kr2p4jtidx6p4ykgztiszaxlsghvfwgodeq5nvtq@dev.azure.com/CS-Package/ID-Lab-PackagesSDK/_git/CSLivenessSDK', :tag => '1.0.0-hml'
+  pod 'CSLivenessSDKTec', :git => '', :tag => '1.0.0-hml'
+  pod 'CSLivenessSDK', :git => '', :tag => '1.0.0-hml'
   
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
