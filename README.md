@@ -14,7 +14,9 @@ O Plugin respeita a política de privacidade da Apple para a captura dos dados d
 ___
 
 # Android
+
 ## Requisitos:
+
 - 3,5 MB de espaço em disco
 - Versão do sistema operacional Android: v5.0 (API v21) ou superior.
 - compileSdkVersão: 31
@@ -65,46 +67,6 @@ allprojects {
     }
 }
 ```
-
-
-## Início rápido
-
-### 1. Instalação
-
-Adicione nas dependencias do `pubspec.yaml`:
-
-```yaml
-cs_liveness_flutter:
-git:
-    url: https://git.acclabs.com.br/gitlab/clearsale/clearsale2210devreactflutter/plugin-cs-liveness-ftec-flutter.git
-    ref: master
-```
-
-### 2. Importação
-
-```dart
-import 'package:cs_liveness_flutter/export.dart';
-```
-
-### Método `start`:
-
- > Inicializa o reconhecimento e retorna um `CSLivenessResult` que possui: `image` (`Image?`), `base64Image` (`String?`), `sessionId` (`String?`), `real` (`bool?`) que são as informações acerca do reconhecimento.
-
-### Retorno `result`:
-
-> `CSLivenessResult` que possui: `image` (`Image?`), `base64Image` (`String?`), `sessionId` (`String?`), `real` (`bool?`) que são as informações acerca do reconhecimento.
-
-```dart
-final csLivenessFlutterPlugin = CsLivenessFlutter(
-    clientId: "CLIENT_ID",
-    clientSecret: "CLIENT_SECRET",
-);
-
-final livenessResult = await csLiveness.start();
-Image? recognizedImage = livenessResultimage;
-String? sessionId = livenessResult.sessionId;
-bool? recognizedImage = livenessResult.real;
-```
 ---
 # iOS
 
@@ -127,10 +89,7 @@ platform :ios, '12.4'
 
 use_frameworks!
 target 'NOME_DO_SEU_PROJETO' do
-    pod 'CSLivenessSDK', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '0.0.8-hml'
-    pod 'CSLivenessSDKTec', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '0.0.5'
-    pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.15.0'
-    pod 'Amplitude', '~> 8.10.2'
+    pod 'CSLivenessSDK', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '1.2.0-hml'
 end
 
 
@@ -152,10 +111,7 @@ platform :ios, '12.4'
 
 use_frameworks!
 target 'NOME_DO_SEU_PROJETO' do
-    pod 'CSLivenessSDK', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '0.0.8'
-    pod 'CSLivenessSDKTec', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '0.0.5'
-    pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.15.0'
-    pod 'Amplitude', '~> 8.10.2'
+    pod 'CSLivenessSDK', :git => 'URL DO REPOSITÓRIO ENVIADO PELA CLEAR SALE', :tag => '1.2.0'
 end
 
 
@@ -182,7 +138,7 @@ Instruções para configuração do framework no projeto:
 
 > Após confifurações executar `pod install`
 
-## Confiuração flutter
+## Flutter
 
 ## Início rápido
 
@@ -194,7 +150,7 @@ Adicione nas dependencias do `pubspec.yaml`:
 cs_liveness_flutter:
 git:
     url: https://github.com/ClearSale/LivenessPluginFlutter.git
-    ref: main
+    ref: 1.1.0
 ```
 
 ### 2. Importação
@@ -212,9 +168,10 @@ import 'package:cs_liveness_flutter/cs_liveness_flutter.dart';
 > `CSLivenessResult` que possui: `image` (`Image?`), `base64Image` (`String?`), `sessionId` (`String?`), `real` (`bool?`) que são as informações acerca do reconhecimento.
 
 ```dart
-final csLivenessFlutterPlugin = CsLivenessFlutter(
+final csLiveness = CsLiveness(
     clientId: "CLIENT_ID",
     clientSecret: "CLIENT_SECRET",
+    vocalGuidance: true,
 );
 
 final livenessResult = await csLiveness.start();
@@ -242,5 +199,3 @@ Ao realizar o download e utilizar nosso SDK você estará concordando com a segu
 **Copyright © 2022 ClearSale**
 
 Todos os direitos são reservados, sendo concedida a permissão para usar o software da maneira como está, não sendo permitido qualquer modificação ou cópia para qualquer fim. O Software é licenciado com suas atuais configurações “tal como está” e sem garantia de qualquer espécie, nem expressa e nem implícita, incluindo mas não se limitando, garantias de comercialização, adequação para fins particulares e não violação de direitos patenteados. Em nenhuma hipótese os titulares dos Direitos Autorais podem ser responsabilizados por danos, perdas, causas de ação, quer seja por contrato ou ato ilícito, ou outra ação tortuosa advinda do uso do Software ou outras ações relacionadas com este Software sem prévia autorização escrita do detentor dos direitos autorais.
-
-
