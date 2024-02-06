@@ -11,6 +11,7 @@ class LivenessStore extends ValueNotifier<LivenessState> {
   final _csLiveness = CsLiveness(
     clientId: clientId,
     clientSecret: clientSecret,
+    vocalGuidance: true
   );
   LivenessStore() : super(LivenessInitialState());
 

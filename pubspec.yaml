@@ -14,7 +14,7 @@ dependencies:
   cs_liveness_flutter:
     git:
       url: https://github.com/ClearSale/LivenessPluginFlutter.git
-      ref: master
+      ref: 1.2.0
 
   cupertino_icons: ^1.0.2
 

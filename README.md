@@ -17,10 +17,10 @@ ___
 
 ## Requisitos:
 
-- 3,5 MB de espaço em disco
+- 25 MB de espaço em disco
 - Versão do sistema operacional Android: v5.0 (API v21) ou superior.
-- compileSdkVersão: 31
-- targetSdkVersion: 31
+- compileSdkVersão: 33
+- targetSdkVersion: 33
 - com.google.android.material:material superior a 1.5.0
 - kotlin_version igual ou superior 1.6.10
 
@@ -150,7 +150,7 @@ Adicione nas dependencias do `pubspec.yaml`:
 cs_liveness_flutter:
 git:
     url: https://github.com/ClearSale/LivenessPluginFlutter.git
-    ref: 1.1.0
+    ref: 1.2.0
 ```
 
 ### 2. Importação
@@ -159,9 +159,14 @@ git:
 import 'package:cs_liveness_flutter/cs_liveness_flutter.dart';
 ```
 
+### 3. Credenciais
+Preencha as variáveis abaixo no arquivo liveness_store.dart
+* linha 8: clientId - identifica o client junto a ClearSale, este valor é fornecido pela ClearSale.
+* linha 9: clientSecret - token de autenticação do cliente, este valor é fornecido pela ClearSale.
+
 ### Método `start`:
 
-> Inicializa o reconhecimento e retorna um `CSLivenessResult` que possui: `image` (`Image?`), `base64Image` (`String?`), `sessionId` (`String?`), `real` (`bool?`) que são as informações acerca do reconhecimento.
+> Inicializa o reconhecimento e retorna um `CSLivenessResult`.
 
 ### Retorno `result`:
 
