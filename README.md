@@ -23,10 +23,11 @@ ___
 - targetSdkVersion: 33
 - com.google.android.material:material superior a 1.5.0
 - kotlin_version igual ou superior 1.6.10
+- plugin Android SDK Build-Tools 30.0.3
 
 ## Instruções de uso
 
-Adicione um arquivo `.env.gradle` que contenha as seguintes variávies:
+Adicione um arquivo `.gradle.env` na pasta raiz do projeto (LivenessSampleFlutter) que contenha as seguintes variávies:
 
 ```
 CS_LIVENESS_TEC_ARTIFACTS_FEED_URL=ARTIFACTS_FEED_URL // valor fornecido pela clear sale
@@ -34,12 +35,6 @@ CS_LIVENESS_TEC_ARTIFACTS_FEED_NAME=ARTIFACTS_FEED_NAME // valor fornecido pela 
 CS_LIVINESS_TEC_USER=USERNAME // valor fornecido pela clear sale
 CS_LIVINESS_TEC_PASS=ACCESSTOKEN // valor fornecido pela clear sale
 CS_LIVENESS_VERSION=LAST_VERSION // valor fornecido pela clear sale
-```
-
-Após isso, adicione no seu projeto Android, pasta android/build.gradle, após o buildscript a seguinte linha:
-```gradle
-def defaultPath = System.env.DIRNAME ?: System.env.PWD
-System.properties["ENV_FILE"] = defaultPath + "/../.gradle.env"
 ```
 
 Ex.:
@@ -153,13 +148,7 @@ git:
     ref: 1.2.0
 ```
 
-### 2. Importação
-
-```dart
-import 'package:cs_liveness_flutter/cs_liveness_flutter.dart';
-```
-
-### 3. Credenciais
+### 2. Credenciais
 Preencha as variáveis abaixo no arquivo liveness_store.dart
 * linha 8: clientId - identifica o client junto a ClearSale, este valor é fornecido pela ClearSale.
 * linha 9: clientSecret - token de autenticação do cliente, este valor é fornecido pela ClearSale.
