@@ -131,7 +131,7 @@ Instruções para configuração do framework no projeto:
 <string>This app requires access to the camera.</string>
 ```
 
-> Após confifurações executar `pod install`
+> Após configurações executar `pod install`
 
 ## Flutter
 
